@@ -17,29 +17,29 @@ $(document).ready(function(){
 });
 
 
-emailjs.init("YrXM6xr1JcO4UQCA3"); // Replace 'user_xxxxxx' with your user ID
+// emailjs.init("YrXM6xr1JcO4UQCA3"); // Replace 'user_xxxxxx' with your user ID
 
-document.getElementById('myForm').addEventListener('submit', function(event) {
-    event.preventDefault();
+// document.getElementById('myForm').addEventListener('submit', function(event) {
+//     event.preventDefault();
 
-    // Use emailjs.sendForm to submit form data
-    emailjs.sendForm('service_uehodo8', 'template_n13ol5f', this)
-        .then(function(response) {
-            console.log('SUCCESS!', response.status, response.text);
+//     // Use emailjs.sendForm to submit form data
+//     emailjs.sendForm('service_uehodo8', 'template_n13ol5f', this)
+//         .then(function(response) {
+//             console.log('SUCCESS!', response.status, response.text);
             
-            // Show success message to the user
-            alert('تم استلام طلبك بنجاح سنتواصل معك');
+//             // Show success message to the user
+//             alert('تم استلام طلبك بنجاح سنتواصل معك');
 
-            // Clear the form fields
-            document.getElementById('myForm').reset();
+//             // Clear the form fields
+//             document.getElementById('myForm').reset();
             
-        }, function(error) {
-            console.log('FAILED...', error);
+//         }, function(error) {
+//             console.log('FAILED...', error);
 
-            // Optionally, show an error message to the user
-            alert('Failed to send your form. Please try again.');
-        });
-});
+//             // Optionally, show an error message to the user
+//             alert('Failed to send your form. Please try again.');
+//         });
+// });
 
 document.getElementById('whatsappOrderBtn').addEventListener('click', function() {
     var phone = '+212770351416'; // Replace with your phone number

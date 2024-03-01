@@ -65,24 +65,24 @@
             <div class="col-md-4 mb-3">
                 <div class="card h-100">
                     <div class="card-body">
-                        <p class="card-text">فخامة، طبيعية، أمان</p>
-                        <footer class="blockquote-footer">John Doe <cite title="Source Title">Source Title</cite></footer>
+                        <p class="card-text">جربت كريم الوجه من bionimaroc ولاحظت تحسنًا ملحوظًا في بشرتي خلال أسابيع قليلة فقط. البشرة أصبحت أكثر نعومة وإشراقًا!</p>
+                        <footer class="blockquote-footer">سلمى الراشدي <cite title="Source Title"></cite></footer>
                     </div>
                 </div>
             </div>
             <div class="col-md-4 mb-3">
                 <div class="card h-100">
                     <div class="card-body">
-                        <p class="card-text">نقاء، استدامة، تألق</p>
-                        <footer class="blockquote-footer">Jane Smith <cite title="Source Title">Source Title</cite></footer>
+                        <p class="card-text">كنت دائمًا أبحث عن منتجات تجميل طبيعية وآمنة، ووجدت ضالتي في bionimaroc. منتجاتهم لطيفة على البشرة وفعالة بشكل مذهل.</p>
+                        <footer class="blockquote-footer">أمين القادري<cite title="Source Title"></cite></footer>
                     </div>
                 </div>
             </div>
             <div class="col-md-4 mb-3">
                 <div class="card h-100">
                     <div class="card-body">
-                        <p class="card-text">"Highly recommended! Excellent customer service and a fantastic product."</p>
-                        <footer class="blockquote-footer">Ahmed Ali <cite title="Source Title">Source Title</cite></footer>
+                        <p class="card-text">لقد استخدمت العديد من الكريمات من ماركات مختلفة، لكن كريم الليل من bionimaroc هو المفضل لدي الآن. يوفر ترطيبًا عميقًا طوال الليل وأستيقظ ببشرة رطبة ومشرقة.</p>
+                        <footer class="blockquote-footer">فاطمة الزهراء بوعناني <cite title="Source Title"></cite></footer>
                     </div>
                 </div>
             </div>
@@ -94,18 +94,15 @@
             <div class="col-12">
                 <div class="border rounded p-4">
                     <h3 class="text-center mb-4">للطلب المرجو ملأ الإستمارة التالية قبل نفاذ الكمية</h3>
-                    <form id="myForm">
+                    <form id="myForm" action="mail.php" method="post">
                         <div class="mb-3">
-                            <input type="text" class="form-control" name="fullname" placeholder="الاسم بالكامل" aria-label="Full name" required>
-                        </div>
-                        <div class="mb-3">
-                            <input type="email" class="form-control" name="email" placeholder="البريد الإلكتروني" aria-label="Email" required>
-                        </div>
-                        <div class="mb-3">
-                            <input type="text" class="form-control" name="address" placeholder="العنوان الكامل" aria-label="address" required>
+                            <input type="text" class="form-control" name="fullname" placeholder="الاسم الكامل" aria-label="Full name" required>
                         </div>
                         <div class="mb-3">
                             <input type="tel" class="form-control" name="phone" placeholder="رقم الهاتف" aria-label="Phone number" required>
+                        </div>
+                        <div class="mb-3">
+                            <input type="text" class="form-control" name="address" placeholder="العنوان الكامل" aria-label="address" required>
                         </div>
                         <div class="d-grid gap-2 text-center">
                             <button type="submit" class="btn btn-primary btn-lg">إرسال الطلب</button>
