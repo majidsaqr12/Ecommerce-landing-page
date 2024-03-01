@@ -14,16 +14,58 @@ $(document).ready(function(){
         
         $('html, body').animate({scrollTop: 0}, 300);
     });
+
+    $('#contactForm').submit(function(e){
+        e.preventDefault(); // Prevent default form submission
+
+        $.ajax({
+            type: "POST",
+            url: "mail.php", // PHP file to handle the form submission
+            data: $(this).serialize(),
+            success: function(response){
+                // Display the success message
+                $('#formFeedback').html('<div class="alert alert-success">' + response.message + '</div>');
+                
+                // Set a timeout to clear the message after 3 seconds
+                setTimeout(function(){
+                    $('#formFeedback').html('');
+                }, 5000); // 3000 milliseconds = 3 seconds
+            },
+            error: function(){
+                // Display the error message
+                $('#formFeedback').html('<div class="alert alert-danger">There was an error processing your request. Please try again later.</div>');
+                
+                // Set a timeout to clear the message after 3 seconds
+                setTimeout(function(){
+                    $('#formFeedback').html('');
+                }, 5000); // 3000 milliseconds = 3 seconds
+            }
+        });
+    });
 });
 
 
-// emailjs.init("YrXM6xr1JcO4UQCA3"); // Replace 'user_xxxxxx' with your user ID
+
+// function sendEmail(){
+//     Email.send({
+//         SecureToken : "c6bddf06-1ad0-45d4-b841-192b2f1a1e9e",
+//         To : 'majidsakr86@gmail.com',
+//         From : "smagedmohamed@gmail.com",
+//         Subject : "This is the subject",
+//         Body : "And this is the body"
+//     }).then(
+//     message => alert(message)
+//     );
+// }
+
+
+// emailjs.init("FrkbxhlNhEhQj0U7q"); // Replace 'user_xxxxxx' with your user ID
 
 // document.getElementById('myForm').addEventListener('submit', function(event) {
 //     event.preventDefault();
 
 //     // Use emailjs.sendForm to submit form data
-//     emailjs.sendForm('service_uehodo8', 'template_n13ol5f', this)
+//     emailjs.sendForm('service_8odva1k', 'template_39rpw8k', this)
 //         .then(function(response) {
 //             console.log('SUCCESS!', response.status, response.text);
             

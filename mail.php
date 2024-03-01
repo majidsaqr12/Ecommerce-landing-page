@@ -1,24 +1,35 @@
 <?php
-if ($_SERVER["REQUEST_METHOD"] == "POST") {
-    $name = $_POST['fullname'];
-    $email = $_POST['phone'];
-    $message = $_POST['address'];
-    $to = 'majidsakr86@gmail.com'; // Specify your email address
-    $subject = 'Message from Website';
-    
-    // Construct the email content
-    $body = "From: $name\nE-Mail: $email\nMessage:\n$message";
-    
-    // Set the header
-    $headers = 'From: smagedmohamed@gmail.com' . "\r\n" .
-            'Reply-To: smagedmohamed@gmail.com' . "\r\n" .
-            'X-Mailer: PHP/' . phpversion();
+use PHPMailer\PHPMailer\PHPMailer;
+use PHPMailer\PHPMailer\Exception;
 
-    // Send the email
-    if (mail($to, $subject, $body, $headers)) {
-        echo "Message successfully sent!";
-    } else {
-        echo "Message sending failed.";
-    }
+require 'vendor/autoload.php'; // Ensure path to autoload.php is correct
+
+$mail = new PHPMailer(true);
+
+try {
+    //Server settings
+    $mail->isSMTP();                                           
+    $mail->Host       = 'smtp.gmail.com';                     
+    $mail->SMTPAuth   = true;                                   
+    $mail->Username   = 'majidsakr86@gmail.com'; // Your Gmail address
+    $mail->Password   = '135790521Mm@02468'; // Your Gmail App Password
+    $mail->SMTPSecure = PHPMailer::ENCRYPTION_SMTPS;            
+    $mail->Port       = 465;                                    
+
+    //Recipients
+    $mail->setFrom('majidsakr86@gmail.com', 'Mailer');
+    $mail->addAddress('majidsakr86@gmail.com', 'Majid Sakr'); // Recipient
+
+    // Content
+    $mail->isHTML(true);
+    $mail->Subject = 'New Form Submission';
+    $mail->Body    = 'Full Name: ' . $_POST['fullname'] . '<br>' .
+                    'Phone: ' . $_POST['phone'] . '<br>' .
+                    'Address: ' . $_POST['address'];
+
+    $mail->send();
+    echo json_encode(['message' => 'Message has been sent']);
+} catch (Exception $e) {
+    echo json_encode(['message' => "Message could not be sent. Mailer Error: {$mail->ErrorInfo}"]);
 }
 ?>
