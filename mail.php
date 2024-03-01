@@ -4,32 +4,39 @@ use PHPMailer\PHPMailer\Exception;
 
 require 'vendor/autoload.php'; // Ensure path to autoload.php is correct
 
-$mail = new PHPMailer(true);
+if ($_SERVER['REQUEST_METHOD'] == 'POST') {
+    $fullname = htmlspecialchars($_POST['fullname']);
+    $phone = htmlspecialchars($_POST['phone']);
+    $address = htmlspecialchars($_POST['address']);
 
-try {
-    //Server settings
-    $mail->isSMTP();                                           
-    $mail->Host       = 'smtp.gmail.com';                     
-    $mail->SMTPAuth   = true;                                   
-    $mail->Username   = 'majidsakr86@gmail.com'; // Your Gmail address
-    $mail->Password   = '135790521Mm@02468'; // Your Gmail App Password
-    $mail->SMTPSecure = PHPMailer::ENCRYPTION_SMTPS;            
-    $mail->Port       = 465;                                    
+    $mail = new PHPMailer(true);
 
-    //Recipients
-    $mail->setFrom('majidsakr86@gmail.com', 'Mailer');
-    $mail->addAddress('majidsakr86@gmail.com', 'Majid Sakr'); // Recipient
+    try {
+        //Server settings
+        $mail->isSMTP();
+        $mail->Host       = 'smtp.gmail.com';
+        $mail->SMTPAuth   = true;
+        $mail->Username   = 'majidsakr86@gmail.com'; // Replace with your email
+        $mail->Password   = 'gwyc uurr oerc bcgj'; // Replace with your password
+        $mail->SMTPSecure = PHPMailer::ENCRYPTION_SMTPS;
+        $mail->Port       = 465;
 
-    // Content
-    $mail->isHTML(true);
-    $mail->Subject = 'New Form Submission';
-    $mail->Body    = 'Full Name: ' . $_POST['fullname'] . '<br>' .
-                    'Phone: ' . $_POST['phone'] . '<br>' .
-                    'Address: ' . $_POST['address'];
+        //Recipients
+        $mail->setFrom('smagedmohamed@gmail.com', 'Mailer');
+        $mail->addAddress('majidsakr86@gmail.com', 'Recipient Name'); // Replace with recipient email
 
-    $mail->send();
-    echo json_encode(['message' => 'Message has been sent']);
-} catch (Exception $e) {
-    echo json_encode(['message' => "Message could not be sent. Mailer Error: {$mail->ErrorInfo}"]);
+        // Content
+        $mail->isHTML(true);
+        $mail->Subject = 'New Form Submission';
+        $mail->Body    = "Full Name: {$fullname}<br>Phone: {$phone}<br>Address: {$address}";
+
+        $mail->send();
+        echo 'Message has been sent';
+    } catch (Exception $e) {
+        echo "Message could not be sent. Mailer Error: {$mail->ErrorInfo}";
+    }
+} else {
+    // If accessed directly or invalid request method
+    echo 'Invalid request';
 }
 ?>

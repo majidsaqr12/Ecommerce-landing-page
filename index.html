@@ -97,7 +97,7 @@
             <div class="col-12">
                 <div class="border rounded p-4">
                     <h3 class="text-center mb-4">للطلب المرجو ملأ الإستمارة التالية قبل نفاذ الكمية</h3>
-                    <form id="contactForm">
+                    <form id="contactForm" method="POST" action="mail.php">
                         <div class="mb-3">
                             <input type="text" class="form-control" name="fullname" placeholder="الاسم الكامل" aria-label="Full name" required>
                         </div>
@@ -113,7 +113,6 @@
                             <button style="border-radius: 30px;" id="whatsappOrderBtn" class="btn btn-success btn-lg">الطلب عبر الواتساب</button>
                         </div>
                     </form>
-                    <div id="formFeedback"></div>
                     <div class="text-center my-4">
                         <p>معاينة وفتح طلبكم قبل اخذه</p>
                         <div class="container my-4">

@@ -15,33 +15,6 @@ $(document).ready(function(){
         $('html, body').animate({scrollTop: 0}, 300);
     });
 
-    $('#contactForm').submit(function(e){
-        e.preventDefault(); // Prevent default form submission
-
-        $.ajax({
-            type: "POST",
-            url: "mail.php", // PHP file to handle the form submission
-            data: $(this).serialize(),
-            success: function(response){
-                // Display the success message
-                $('#formFeedback').html('<div class="alert alert-success">' + response.message + '</div>');
-                
-                // Set a timeout to clear the message after 3 seconds
-                setTimeout(function(){
-                    $('#formFeedback').html('');
-                }, 5000); // 3000 milliseconds = 3 seconds
-            },
-            error: function(){
-                // Display the error message
-                $('#formFeedback').html('<div class="alert alert-danger">There was an error processing your request. Please try again later.</div>');
-                
-                // Set a timeout to clear the message after 3 seconds
-                setTimeout(function(){
-                    $('#formFeedback').html('');
-                }, 5000); // 3000 milliseconds = 3 seconds
-            }
-        });
-    });
 });
 
 
