@@ -197,14 +197,48 @@ h2 {
 
 .footer {
     border-top: 1px solid #eaeaea;
-    padding: 20px 0; /* Adjust padding to suit your design */
-    background: #f8f9fa; /* Adjust the background color as needed */
+    padding: 40px 0; /* Increased padding for larger space */
+    background: #00ADB5; /* Adjusted background color to match the image */
+    color: white; /* Footer text color */
+    position: relative; /* For positioning the footer at the bottom */
 }
 
-.footer img {
-max-height: 100px; /* Adjust to control the size of the logo */
-width: auto; /* Keep the aspect ratio */
+.footer-logo {
+    max-height: 100px; /* Adjust to control the size of the logo */
+    width: auto; /* Keep the aspect ratio */
+    margin-bottom: 20px; /* Space between logo and text */
 }
+
+.footer-text {
+    font-size: 0.75rem; /* Adjust to match your design */
+    letter-spacing: 1px; /* Optional: styling for letter spacing */
+}
+
+
+/* FAQ Section */
+.faq-button {
+    background-color: #007bff; /* Example background color */
+    color: white; /* Text color */
+    text-align: start; /* Align text to the start */
+}
+
+.accordion-icon {
+    display: inline-block; /* Needed for spacing */
+    transition: transform 0.2s; /* Smooth transition for the icon */
+}
+
+/* Rotate icon when accordion is open */
+.accordion-button:not(.collapsed) .accordion-icon {
+    transform: rotate(45deg); /* Rotates the '+' icon to an 'x' */
+}
+
+/* Space between accordion items */
+.accordion-item {
+    margin-bottom: 1rem; /* Adjust as needed */
+}
+
+/* More styles here */
+
 /* Responsive adjustments */
 @media (max-width: 768px) {
     .product-section .btn {
