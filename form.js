@@ -7,16 +7,21 @@ const addressInput = document.querySelector("#address");
 const formMessageDiv = document.querySelector("#formMessage");
 
 const getEmailMessage = ({ name, phone, address, imageUrl } = {}) => {
+    const siteUrl = "https://majidsaqr12.github.io/Ecommerce-landing-page/"; // Replace with your actual site URL
+    const fullImageUrl = siteUrl + imageUrl; // Assuming imageUrl is a relative path
+
     return `
         <p>You Have Received A New Message From Bionimaroc Measuring Devices:</p>
         <div style="background-color: #101010; color: #fbfbfb; padding: 12px">
             <p style="margin: 0;">Name: ${name}</p>
             <p style="margin: 12px 0;">Phone: ${phone}</p>
             <p style="margin: 12px 0;">Address: ${address}</p>
-            <p style="margin: 12px 0;">Product Image: <a href="${imageUrl}">${imageUrl}</a></p>
+            <p style="margin: 12px 0;">Product Image: <a href="${fullImageUrl}">${fullImageUrl}</a></p>
+            <p style="margin: 12px 0;">Visit our site for more: <a href="${siteUrl}">${siteUrl}</a></p>
         </div>
     `;
 };
+
 
 contactForm.addEventListener("submit", (e) => {
     e.preventDefault();
