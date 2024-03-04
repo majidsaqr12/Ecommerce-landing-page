@@ -195,6 +195,28 @@ h2 {
     }
 }
 
+/* whatsapp icon */
+.whatsapp-button {
+    position: fixed;
+    bottom: 60px; /* Adjust based on your preference */
+    right: 20px; /* Adjust based on your preference */
+    font-size: 30px; /* Adjust icon size */
+    width: 50px; /* Button size */
+    height: 50px; /* Button size */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    display: flex;
+    cursor: pointer;
+    border: none;
+    z-index: 100; /* Ensure it's above other content */
+}
+
+/* Optional: add hover effect */
+.whatsapp-button:hover {
+    background-color: #25d366;
+    color: #fff;
+}
 
 .footer {
     border-top: 1px solid #eaeaea;
@@ -213,6 +235,7 @@ h2 {
 .footer-text {
     font-size: 0.75rem; /* Adjust to match your design */
     letter-spacing: 1px; /* Optional: styling for letter spacing */
+    color: black;
 }
 
 
