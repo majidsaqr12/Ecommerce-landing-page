@@ -199,7 +199,7 @@ h2 {
 .footer {
     border-top: 1px solid #eaeaea;
     padding: 40px 0; /* Increased padding for larger space */
-    background: #00ADB5; /* Adjusted background color to match the image */
+    background: white; /* Adjusted background color to match the image */
     color: white; /* Footer text color */
     position: relative; /* For positioning the footer at the bottom */
 }
@@ -218,7 +218,7 @@ h2 {
 
 /* FAQ Section */
 .faq-button {
-    background-color: #007bff; /* Example background color */
+    background-color: #20BDB3; /* Example background color */
     color: white; /* Text color */
     text-align: start; /* Align text to the start */
 }
