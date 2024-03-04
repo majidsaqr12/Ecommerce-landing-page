@@ -13,7 +13,7 @@ const getEmailMessage = ({ name, phone, address, imageUrl } = {}) => {
             <p style="margin: 0;">Name: ${name}</p>
             <p style="margin: 12px 0;">Phone: ${phone}</p>
             <p style="margin: 12px 0;">Address: ${address}</p>
-            <p style="margin: 12px 0;"><img src="${imageUrl}" alt="Product Image" style="max-width: 100%; height: auto;"></p>
+            <p style="margin: 12px 0;">Product Image: <a href="${imageUrl}">${imageUrl}</a></p>
         </div>
     `;
 };
