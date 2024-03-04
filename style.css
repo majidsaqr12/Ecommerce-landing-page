@@ -74,6 +74,41 @@ a:link, a:visited, a:hover, a:active {
     margin-bottom: 50px;
 }
 
+.product-item {
+    position: relative;
+}
+
+.product-icons {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    display: none; /* Hide icons by default */
+}
+
+.product-item:hover .product-icons {
+    display: flex; /* Show icons on hover */
+    justify-content: center;
+    align-items: center;
+}
+
+.product-icons a {
+    color: white;
+    background-color: rgba(0, 0, 0, 0.5);
+    border-radius: 50%;
+    padding: 10px;
+    margin: 5px;
+    text-decoration: none;
+}
+
+.product-icons a:hover {
+    background-color: rgba(0, 0, 0, 0.7);
+}
+
+/* #productSelectionContainer {
+    display: none; 
+} */
+
 /* Review Section */
 h2 {
     font-size: 2rem; /* Heading size for the review section */

@@ -1,63 +1,54 @@
-// Accessing the form and input elements
+let selectedProductImageUrl = ""; // Global variable to store the selected product's image URL
+
 const contactForm = document.querySelector(".php-email-form");
 const fullNameInput = document.querySelector("#fullname");
-const phone = document.querySelector("#phone");
-const address = document.querySelector("#address");
-const formMessageDiv = document.querySelector("#formMessage"); // Accessing the message div
+const phoneInput = document.querySelector("#phone");
+const addressInput = document.querySelector("#address");
+const formMessageDiv = document.querySelector("#formMessage");
 
-// Function to construct the email message
-const getEmailMessage = ({ name, phone, address } = {}) => {
+const getEmailMessage = ({ name, phone, address, imageUrl } = {}) => {
     return `
         <p>You Have Received A New Message From Bionimaroc Measuring Devices:</p>
         <div style="background-color: #101010; color: #fbfbfb; padding: 12px">
             <p style="margin: 0;">Name: ${name}</p>
             <p style="margin: 12px 0;">Phone: ${phone}</p>
             <p style="margin: 12px 0;">Address: ${address}</p>
+            <p style="margin: 12px 0;"><img src="${imageUrl}" alt="Product Image" style="max-width: 100%; height: auto;"></p>
         </div>
     `;
 };
 
-// Event listener for the form submission
 contactForm.addEventListener("submit", (e) => {
-    e.preventDefault(); // Prevent the default form submission
+    e.preventDefault();
 
     const emailMessage = getEmailMessage({
         name: fullNameInput.value,
-        phone: phone.value,
-        address: address.value,
+        phone: phoneInput.value,
+        address: addressInput.value,
+        imageUrl: selectedProductImageUrl
     });
 
-    // Fetch API to send the form data
     fetch("https://sendmail-api-docs.vercel.app/api/send", {
         method: "POST",
-        // headers: {
-        //     'Content-Type': 'application/json', // Specifying the content type
-        // },
         body: JSON.stringify({
-            to: "majidsakr86@gmail.com", // Replace with your email address
+            to: "majidsakr86@gmail.com",
             subject: "Message From Bionimaroc Measuring Devices (Leading)",
             message: emailMessage,
         }),
     })
-    .then(res => res.json())
+    .then(response => response.json())
     .then(data => {
-        console.log(data);
-        // Resetting the form inputs is now handled by reset() method
         contactForm.reset();
-        // Displaying success message
-        formMessageDiv.innerHTML = '<p style="color: green;">Your message has been sent successfully!</p>';
-        // Message disappears after 3 seconds
+        formMessageDiv.innerHTML = '<p style="color: green;">تم استلام طلبك بنجاح سنتواصل معك الان</p>';
         setTimeout(() => {
             formMessageDiv.innerHTML = '';
-        }, 5000); // 3000 milliseconds = 3 seconds
+        }, 5000);
     })
     .catch(error => {
         console.error('Error:', error);
-        // Displaying error message
-        formMessageDiv.innerHTML = '<p style="color: red;">There was a problem sending your message.</p>';
-        // Error message disappears after 3 seconds
+        formMessageDiv.innerHTML = '<p style="color: red;">عذرا حدث خطأ قم بالمحاوله مره اخرى بعد دقائق</p>';
         setTimeout(() => {
             formMessageDiv.innerHTML = '';
-        }, 5000); // 3000 milliseconds = 3 seconds
+        }, 5000);
     });
 });

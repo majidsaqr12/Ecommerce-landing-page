@@ -44,7 +44,6 @@
         </div>
     </nav>
 
-
     <!-- Order Form section -->
     <div class="container my-5" id="_form">
         <div class="row">
@@ -61,6 +60,19 @@
                         <div class="mb-3">
                             <input type="text" class="form-control" id="address" name="address" placeholder="العنوان الكامل" aria-label="address" required>
                         </div>
+                        <div class="mb-3" id="productSelectionContainer"> <!-- Add an ID for easier selection -->
+                            <div class="input-group">
+                                <select class="form-select" id="productSelection" name="productSelection" aria-label="Product Selection" required>
+                                    <option value="" selected disabled>اختر عرضاً</option>
+                                    <option value="images/products/product1.jpeg">Gs260*2</option>
+                                    <option value="images/products/product2.jpeg">Pack219</option>
+                                    <option value="images/products/product3.jpeg">Pack219</option>
+                                    <option value="images/products/product4.jpeg">Pack140</option>
+                                    <option value="images/products/product5.jpeg">Pack179</option>
+                                    <option value="images/products/product6.jpeg">Pack139</option>
+                                </select>
+                            </div>
+                        </div>                        
                         <div class="d-grid gap-2 text-center">
                             <button type="submit" class="btn btn-primary btn-lg">إرسال الطلب</button>
                             <div id="formMessage" class="mt-3"></div> <!-- Placeholder for the message -->
@@ -100,15 +112,48 @@
             <marquee><p class="text-center">موثوق بنا أكثر من 1000 زبون</p></marquee>
             <a href="#_form"><button type="button" class="btn btn-primary">اطلب الان</button></a>
             <div class="product-image">
-                <img src="images/products/product1.jpg" alt="Product Image" class="img-fluid">
-                <img src="images/products/product2.jpg" alt="Product Image" class="img-fluid">
-                <img src="images/products/product3.jpg" alt="Product Image" class="img-fluid">
-                <img src="images/products/product4.jpg" alt="Product Image" class="img-fluid">
-                <img src="images/products/product6.jpg" alt="Product Image" class="img-fluid">
-                <img src="images/products/product7.jpg" alt="Product Image" class="img-fluid">
-                <img src="images/products/product8.jpg" alt="Product Image" class="img-fluid">
-                <img src="images/products/product9.jpg" alt="Product Image" class="img-fluid">
-                <img src="images/products/product10.jpg" alt="Product Image" class="img-fluid">
+                <div class="product-item">
+                    <img id="product1" src="images/products/product1.jpeg" alt="Gs260*2" class="img-fluid">
+                    <div class="product-icons">
+                        <a href="#" class="add-to-cart" data-product-id="images/products/product1.jpeg"><i class="bi bi-cart-plus-fill"></i></a>
+                        <a href="#" class="share"><i class="bi bi-share-fill"></i></a>
+                    </div>
+                </div>
+                <div class="product-item">
+                    <img id="product2" src="images/products/product2.jpeg" alt="Pack219" class="img-fluid">
+                    <div class="product-icons">
+                        <a href="#" class="add-to-cart" data-product-id="images/products/product2.jpeg"><i class="bi bi-cart-plus-fill"></i></a>
+                        <a href="#" class="share"><i class="bi bi-share-fill"></i></a>
+                    </div>
+                </div>
+                <div class="product-item">
+                    <img id="product3" src="images/products/product3.jpeg" alt="Pack219" class="img-fluid">
+                    <div class="product-icons">
+                        <a href="#" class="add-to-cart" data-product-id="images/products/product3.jpeg"><i class="bi bi-cart-plus-fill"></i></a>
+                        <a href="#" class="share"><i class="bi bi-share-fill"></i></a>
+                    </div>
+                </div>
+                <div class="product-item">
+                    <img id="product4" src="images/products/product4.jpeg" alt="Pack140" class="img-fluid">
+                    <div class="product-icons">
+                        <a href="#" class="add-to-cart" data-product-id="images/products/product4.jpeg"><i class="bi bi-cart-plus-fill"></i></a>
+                        <a href="#" class="share"><i class="bi bi-share-fill"></i></a>
+                    </div>
+                </div>
+                <div class="product-item">
+                    <img id="product5" src="images/products/product5.jpeg" alt="Pack179" class="img-fluid">
+                    <div class="product-icons">
+                        <a href="#" class="add-to-cart" data-product-id="images/products/product5.jpeg"><i class="bi bi-cart-plus-fill"></i></a>
+                        <a href="#" class="share"><i class="bi bi-share-fill"></i></a>
+                    </div>
+                </div>
+                <div class="product-item">
+                    <img id="product6" src="images/products/product6.jpeg" alt="Pack139" class="img-fluid">
+                    <div class="product-icons">
+                        <a href="#" class="add-to-cart" data-product-id="images/products/product6.jpeg"><i class="bi bi-cart-plus-fill"></i></a>
+                        <a href="#" class="share"><i class="bi bi-share-fill"></i></a>
+                    </div>
+                </div>
             </div>
         </div>
     </div>
