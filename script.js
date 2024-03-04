@@ -28,7 +28,7 @@ document.getElementById('whatsappOrderBtn').addEventListener('click', function()
 });
 
 
-let showTimes = 100; // Number of times to show the message
+let showTimes = 5; // Number of times to show the message
 let count = 0; // Counter for the toggle action
 
 // Function to toggle the visibility of the message
@@ -39,6 +39,7 @@ function toggleMessageVisibility() {
 
     if (count >= showTimes * 2) { // Each toggle consists of show and hide, hence multiplied by 2
         clearInterval(toggleInterval); // Stop toggling after showing and hiding five times
+        message.style.display === 'none';
     }
 }
 

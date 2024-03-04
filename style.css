@@ -4,16 +4,15 @@ body {
 }
 /* Customizing the navbar to add margin */
 nav.navbar {
-    margin-left: 20px;
-    margin-right: 20px;
-    margin-right: auto;
+    margin: 0 20px; /* Updated to simplify margin setting */
+    justify-content: center; /* Centers the content in a flex container */
     border-radius: 5px; /* Optional: Adds rounded corners */
 }
 
-.navbar-brand img {
-    height: 60px;
-    width: 120px;
-    object-fit: contain;
+/* Assuming social icons are wrapped in a .navbar-nav or similar container */
+.navbar-nav {
+    justify-content: center; /* Center the social icons within the navbar-nav */
+    flex-grow: 1; /* Allows the navbar-nav to take up as much space as available */
 }
 
 /* Custom icon size */
@@ -25,6 +24,10 @@ nav.navbar {
 .bi-facebook { color: #3b5998; }
 .bi-twitter { color: #1da1f2; }
 .bi-instagram { color: #e1306c; } /* Instagram icon color */
+
+a:link, a:visited, a:hover, a:active {
+    text-decoration: none;
+}
 
 .product-section {
     padding: 20px;
