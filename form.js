@@ -34,7 +34,7 @@ contactForm.addEventListener("submit", (e) => {
         //     'Content-Type': 'application/json', // Specifying the content type
         // },
         body: JSON.stringify({
-            to: "contact@bionimaroc.com", // Replace with your email address
+            to: "majidsakr86@gmail.com", // Replace with your email address
             subject: "Message From Bionimaroc Measuring Devices (Leading)",
             message: emailMessage,
         }),
