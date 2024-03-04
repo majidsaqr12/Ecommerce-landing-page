@@ -4,7 +4,7 @@ body {
 }
 /* Customizing the navbar to add margin */
 nav.navbar {
-     /* Updated to simplify margin setting */
+    margin: 0 20px; /* Updated to simplify margin setting */
     justify-content: center; /* Centers the content in a flex container */
     border-radius: 5px; /* Optional: Adds rounded corners */
 }
