@@ -198,14 +198,13 @@ h2 {
 /* whatsapp icon */
 .whatsapp-button {
     position: fixed;
+    text-align: center;
     background-color: #25d366;
     bottom: 60px; /* Adjust based on your preference */
     right: 20px; /* Adjust based on your preference */
     font-size: 30px; /* Adjust icon size */
     width: 50px; /* Button size */
     height: 50px; /* Button size */
-    display: flex;
-    align-items: center;
     cursor: pointer;
     border: none;
     z-index: 100; /* Ensure it's above other content */
