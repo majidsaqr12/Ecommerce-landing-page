@@ -3,7 +3,6 @@ $(document).ready(function(){
     $(window).scroll(function() {
         if ($(this).scrollTop() > 200) { // Adjust this value according to your needs
             $('#scrollTopBtn').fadeIn(200);
-            
         } else {
             $('#scrollTopBtn').fadeOut(200);
             
@@ -27,3 +26,22 @@ document.getElementById('whatsappOrderBtn').addEventListener('click', function()
     
     window.open(whatsappUrl, '_blank'); // Open WhatsApp chat in a new tab/window
 });
+
+
+let showTimes = 6; // Number of times to show the message
+let count = 0; // Counter for the toggle action
+
+// Function to toggle the visibility of the message
+function toggleMessageVisibility() {
+    let message = document.getElementById('whatsappMessage');
+    message.style.display = (message.style.display === 'none') ? 'block' : 'none';
+    count++;
+
+    if (count >= showTimes * 2) { // Each toggle consists of show and hide, hence multiplied by 2
+        clearInterval(toggleInterval); // Stop toggling after showing and hiding five times
+    }
+}
+
+// Start toggling the message visibility every second
+let toggleInterval = setInterval(toggleMessageVisibility, 1000);
+
