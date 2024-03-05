@@ -7,7 +7,7 @@ const addressInput = document.querySelector("#address");
 const formMessageDiv = document.querySelector("#formMessage");
 
 const getEmailMessage = ({ name, phone, address, imageUrl } = {}) => {
-    const siteUrl = "https://majidsaqr12.github.io/Ecommerce-landing-page/"; // Replace with your actual site URL
+    const siteUrl = "https://bionime-gl.santediagno.com/"; // Replace with your actual site URL
     const fullImageUrl = siteUrl + imageUrl; // Assuming imageUrl is a relative path
 
     return `
@@ -36,7 +36,7 @@ contactForm.addEventListener("submit", (e) => {
     fetch("https://sendmail-api-docs.vercel.app/api/send", {
         method: "POST",
         body: JSON.stringify({
-            to: "majidsakr86@gmail.com",
+            to: "contact@santediagno.com",
             subject: "Message From Bionimaroc Measuring Devices (Leading)",
             message: emailMessage,
         }),

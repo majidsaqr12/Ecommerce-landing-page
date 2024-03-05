@@ -55,3 +55,14 @@ function toggleMessageVisibility() {
 }
 
 let toggleInterval = setInterval(toggleMessageVisibility, 1000);
+
+document.querySelectorAll('.product-item').forEach(item => {
+    item.addEventListener('mouseenter', function() {
+        const icons = this.querySelector('.product-icons');
+        icons.classList.add('show');
+    });
+    item.addEventListener('mouseleave', function() {
+        const icons = this.querySelector('.product-icons');
+        icons.classList.remove('show');
+    });
+});
