@@ -340,6 +340,10 @@ h2 {
 }
 
 /* More styles here */
+.is-invalid {
+    border-color: #20BDB3; /* Red border */
+}
+
 
 /* Responsive adjustments */
 @media (max-width: 768px) {

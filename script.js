@@ -31,13 +31,78 @@ $(document).ready(function() {
 });
 
 // WhatsApp button functionality
-document.getElementById('whatsappOrderBtn').addEventListener('click', function() {
-    var phone = '+212770351416';
-    var message = encodeURIComponent("Your custom message here");
-    var whatsappUrl = `https://wa.me/${phone}?text=${message}`;
+document.getElementById('whatsappOrderBtn').addEventListener('click', function(event) {
+    event.preventDefault(); // Prevent the default form submit action
 
+    // Initially assume all fields are filled
+    let allFieldsFilled = true;
+
+    // List of all input fields
+    const fields = [
+        document.getElementById('fullname'),
+        document.getElementById('phone'),
+        document.getElementById('address'),
+        document.getElementById('productSelection'),
+        document.getElementById('quantity'),
+    ];
+
+    // Check each field and apply red border if empty
+    fields.forEach(field => {
+        if (!field.value.trim()) {
+            field.style.border = '2px solid red'; // Highlight empty fields
+            allFieldsFilled = false;
+        } else {
+            field.style.border = ''; // Reset the border for filled fields
+        }
+    });
+
+    // Stop the function if any field is empty
+    if (!allFieldsFilled) return;
+
+    // If all fields are filled, construct the custom message
+    var fullname = document.getElementById('fullname').value.trim();
+    var phone = document.getElementById('phone').value.trim();
+    var address = document.getElementById('address').value.trim();
+    var productSelection = document.getElementById('productSelection').options[document.getElementById('productSelection').selectedIndex].text;
+    var quantity = document.getElementById('quantity').value.trim();
+
+    var customMessage = encodeURIComponent(`مرحبا بكم في متجرنا.\n\nFull Name: ${fullname}\nPhone: ${phone}\nAddress: ${address}\nProduct: ${productSelection}\nQuantity: ${quantity}`);
+
+    // WhatsApp number
+    var whatsappPhone = '+201095504278'; // Your WhatsApp business phone number
+
+    // Generate WhatsApp URL
+    var whatsappUrl = `https://wa.me/${whatsappPhone}?text=${customMessage}`;
+
+    // Open WhatsApp URL in a new tab
     window.open(whatsappUrl, '_blank');
 });
+
+// Don't Requiring
+
+// document.getElementById('whatsappOrderBtn').addEventListener('click', function(event) {
+//     event.preventDefault(); // Prevent the default form submit action
+
+//     // Gather form values
+//     var fullname = document.getElementById('fullname').value;
+//     var phone = document.getElementById('phone').value;
+//     var address = document.getElementById('address').value;
+//     var productSelection = document.getElementById('productSelection').options[document.getElementById('productSelection').selectedIndex].text;
+//     var quantity = document.getElementById('quantity').value;
+
+//     // Construct the message
+//     var customMessage = encodeURIComponent(`Hello! I would like to place an order.\n\nFull Name: ${fullname}\nPhone: ${phone}\nAddress: ${address}\nProduct: ${productSelection}\nQuantity: ${quantity}`);
+
+//     // WhatsApp number
+//     var whatsappPhone = '+2201095504278'; // This should be your WhatsApp business phone number
+
+//     // Generate WhatsApp URL
+//     var whatsappUrl = `https://wa.me/${whatsappPhone}?text=${customMessage}`;
+
+//     // Open WhatsApp URL
+//     window.open(whatsappUrl, '_blank');
+// });
+
 
 let showTimes = 5;
 let count = 0;
