@@ -63,20 +63,23 @@
                         <div class="mb-3" id="productSelectionContainer"> <!-- Add an ID for easier selection -->
                             <div class="input-group">
                                 <select class="form-select" id="productSelection" name="productSelection" aria-label="Product Selection">
-                                    <option value="images/products/product1.jpeg">Pack269</option>
-                                    <option value="images/products/product2.jpeg">Pack289-1</option>
-                                    <option value="images/products/product3.jpeg">Pack299</option>
-                                    <option value="images/products/product4.jpeg">Pack289-2</option>
-                                    <option value="images/products/product5.jpeg">Pack845</option>
-                                    <option value="images/products/product6.jpeg">Pack459</option>
-                                    <option value="images/products/product7.jpeg">Pack389</option>
+                                    <option value="images/products/product7.jpeg" selected>Pack389</option>
                                 </select>
                             </div>
-                        </div>                        
-                        <div class="d-grid gap-2 text-center">
-                            <button type="submit" class="btn btn-primary btn-lg">إرسال الطلب</button>
-                            <div id="formMessage" class="mt-3"></div> <!-- Placeholder for the message -->
                         </div>
+                        <div class="row align-items-center">
+                            <div class="col-6 col-md-4">
+                                <input type="number" id="quantity" name="quantity" min="1" value="1" class="form-control" placeholder="الكمية">
+                            </div>
+                            <div class="col-6 col-md-8 d-grid">
+                                <button type="submit" class="btn btn-primary btn-lg">إرسال الطلب</button>
+                                <div id="formMessage" class="mt-3"></div> <!-- Placeholder for the message -->
+                            </div>
+                        </div>                                             
+                        <!-- <div class="d-grid gap-2 text-center">
+                            <button type="submit" class="btn btn-primary btn-lg">إرسال الطلب</button>
+                            <div id="formMessage" class="mt-3"></div> Placeholder for the message
+                        </div> -->
                     </form>
                     <div class="d-grid gap-2 text-center">
                         <div class="divider">أو</div>
@@ -112,42 +115,6 @@
             <marquee><p class="text-center">أكثر من 1000 زبون وثقوا بنا</p></marquee>
             <a href="#_form"><button type="button" class="btn btn-primary">اطلب الان</button></a>
             <div class="product-image">
-                <div class="product-item">
-                    <img id="product1" src="images/products/product1.jpeg" alt="Pack269" class="img-fluid">
-                    <div class="product-icons">
-                        <a href="#" class="add-to-cart" data-product-id="images/products/product1.jpeg"><i class="bi bi-cart-plus-fill"></i></a>
-                    </div>
-                </div>
-                <div class="product-item">
-                    <img id="product1" src="images/products/product2.jpeg" alt="Pack289-1" class="img-fluid">
-                    <div class="product-icons">
-                        <a href="#" class="add-to-cart" data-product-id="images/products/product2.jpeg"><i class="bi bi-cart-plus-fill"></i></a>
-                    </div>
-                </div>
-                <div class="product-item">
-                    <img id="product1" src="images/products/product3.jpeg" alt="Pack299" class="img-fluid">
-                    <div class="product-icons">
-                        <a href="#" class="add-to-cart" data-product-id="images/products/product3.jpeg"><i class="bi bi-cart-plus-fill"></i></a>
-                    </div>
-                </div>
-                <div class="product-item">
-                    <img id="product1" src="images/products/product4.jpeg" alt="Pack289-2" class="img-fluid">
-                    <div class="product-icons">
-                        <a href="#" class="add-to-cart" data-product-id="images/products/product4.jpeg"><i class="bi bi-cart-plus-fill"></i></a>
-                    </div>
-                </div>
-                <div class="product-item">
-                    <img id="product1" src="images/products/product5.jpeg" alt="Pack845" class="img-fluid">
-                    <div class="product-icons">
-                        <a href="#" class="add-to-cart" data-product-id="images/products/product5.jpeg"><i class="bi bi-cart-plus-fill"></i></a>
-                    </div>
-                </div>
-                <div class="product-item">
-                    <img id="product1" src="images/products/product6.jpeg" alt="Pack459" class="img-fluid">
-                    <div class="product-icons">
-                        <a href="#" class="add-to-cart" data-product-id="images/products/product6.jpeg"><i class="bi bi-cart-plus-fill"></i></a>
-                    </div>
-                </div>
                 <div class="product-item">
                     <img id="product1" src="images/products/product7.jpeg" alt="Pack389" class="img-fluid">
                     <div class="product-icons">

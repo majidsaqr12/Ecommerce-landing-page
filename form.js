@@ -5,9 +5,10 @@ const fullNameInput = document.querySelector("#fullname");
 const phoneInput = document.querySelector("#phone");
 const addressInput = document.querySelector("#address");
 const formMessageDiv = document.querySelector("#formMessage");
+const quantityInput = document.querySelector("#quantity");
 
-const getEmailMessage = ({ name, phone, address, imageUrl } = {}) => {
-    const siteUrl = "https://majidsaqr12.github.io/Ecommerce-landing-page/"; // Replace with your actual site URL
+const getEmailMessage = ({ name, phone, address, quantity, imageUrl } = {}) => {
+    const siteUrl = ""; // Replace with your actual site URL
     const fullImageUrl = siteUrl + imageUrl; // Assuming imageUrl is a relative path
 
     return `
@@ -16,6 +17,7 @@ const getEmailMessage = ({ name, phone, address, imageUrl } = {}) => {
             <p style="margin: 0;">Name: ${name}</p>
             <p style="margin: 12px 0;">Phone: ${phone}</p>
             <p style="margin: 12px 0;">Address: ${address}</p>
+            <p style="margin: 12px 0;">quantity: ${quantity}</p>
             <p style="margin: 12px 0;">Product Image: <a href="${fullImageUrl}">${fullImageUrl}</a></p>
             <p style="margin: 12px 0;">Visit our site for more: <a href="${siteUrl}">${siteUrl}</a></p>
         </div>
@@ -30,7 +32,8 @@ contactForm.addEventListener("submit", (e) => {
         name: fullNameInput.value,
         phone: phoneInput.value,
         address: addressInput.value,
-        imageUrl: selectedProductImageUrl
+        imageUrl: selectedProductImageUrl,
+        quantity: quantityInput.value,
     });
 
     fetch("https://sendmail-api-docs.vercel.app/api/send", {
