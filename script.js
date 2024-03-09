@@ -66,7 +66,7 @@ document.getElementById('whatsappOrderBtn').addEventListener('click', function(e
     var productSelection = document.getElementById('productSelection').options[document.getElementById('productSelection').selectedIndex].text;
     var quantity = document.getElementById('quantity').value.trim();
 
-    var customMessage = encodeURIComponent(`مرحبا بكم في متجرنا.\n\nFull Name: ${fullname}\nPhone: ${phone}\nAddress: ${address}\nProduct: ${productSelection}\nQuantity: ${quantity}`);
+    var customMessage = encodeURIComponent(`مرحبا بكم في متجرنا.\n\nالاسم: ${fullname}\nالهاتف: ${phone}\nالعنوان: ${address}\nالمنتج: ${productSelection}\nالكمية: ${quantity}`);
 
     // WhatsApp number
     var whatsappPhone = '+201095504278'; // Your WhatsApp business phone number
