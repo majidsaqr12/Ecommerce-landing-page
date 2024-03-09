@@ -175,6 +175,7 @@ h2 {
 .form-control {
     margin-bottom: 15px; /* Spacing between form inputs */
     direction: rtl;
+    border-radius: 30px;
 }
 
 .btn-primary {
@@ -351,5 +352,18 @@ h2 {
     }
     .pulsing-button {
         width: 95%; /* Larger width on smaller screens */
+    }
+}
+
+@media (max-width: 576px) {
+    .form-control, .btn {
+        font-size: 14px; /* Smaller text to fit compact spaces */
+        padding: .375rem .75rem; /* Adjust padding for smaller elements */
+    }
+}
+
+@media (min-width: 992px) {
+    .form-control, .btn {
+        font-size: 16px; /* Larger text for readability on bigger screens */
     }
 }
